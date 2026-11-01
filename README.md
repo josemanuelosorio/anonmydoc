@@ -1,6 +1,6 @@
 # anonmydoc
 
-Quita los datos personales de un documento antes de pegarlo en una IA y después restaura la respuesta con los datos originales. Pensado para documentos mexicanos. En línea en [anonmydoc.net](https://anonmydoc.net). El código es privado; este repositorio explica cómo funciona y cómo se mide.
+Quita los datos personales de un documento antes de pegarlo en una IA y después restaura la respuesta con los datos originales. Pensado para documentos mexicanos. En línea en [anonmydoc.net](https://anonmydoc.net). Lo desarrollé entre septiembre y octubre de 2026; este repositorio se publicó el 1 de noviembre de 2026. El código es privado; aquí se explica cómo funciona y cómo se mide.
 
 ![El contrato de ejemplo de anonmydoc.net ya revisado: a la izquierda los 16 datos detectados por tipo, a la derecha el texto marcado por colores.](img/anonmydoc-ejemplo.png)
 
@@ -28,9 +28,13 @@ Cada corpus de prueba son documentos con respuesta conocida, escritos por agente
 - **Cobertura:** datos sin fuga entre todos los datos esperados.
 - **Precisión:** marcas que caen sobre un dato esperado entre todas las marcas.
 
-Última medición ciega (19 de octubre de 2026): 32 documentos y 882 datos que el motor nunca había visto, con 95.5 % de cobertura (40 fugas) y 93.5 % de precisión. Las dos mediciones ciegas anteriores dieron 89.3 % y 87.8 % de cobertura: la dificultad cambia entre corpus, así que una sola cifra puede sobrestimar.
+Última medición ciega (19 de octubre de 2026): 32 documentos y 882 datos que el motor nunca había visto, con 95.5 % de cobertura (40 fugas) y 93.5 % de precisión. Las dos mediciones ciegas anteriores dieron 89.3 % y 87.8 % de cobertura: la dificultad cambia entre corpus, así que una sola cifra puede sobrestimar. Es una medición interna: el motor y los corpus son privados, así que la cifra no se puede reproducir desde aquí.
 
-Además hay 178 pruebas unitarias en Node y pruebas de extremo a extremo en un navegador real, entre ellas una que corre la página sin internet.
+Además hay 178 pruebas unitarias en Node y pruebas de extremo a extremo en un navegador real, entre ellas una que corre la página sin internet; también viven en el repositorio privado.
+
+## Bibliotecas de terceros
+
+El sitio sirve desde su propio dominio, sin CDN: pdf.js 3.11.174 (Apache 2.0) para leer PDF, mammoth (BSD de 2 cláusulas) para leer DOCX, pdf-lib (MIT) para limpiar PDF y la fuente Geist (SIL OFL 1.1).
 
 ## Límites
 
